@@ -1,0 +1,5 @@
+br\com\sankhya\financeiro\model\Lancamento.class
+br\com\sankhya\financeiro\config\WebConfig.class
+br\com\sankhya\financeiro\config\WebAppInitializer.class
+br\com\sankhya\financeiro\config\AppConfig.class
+br\com\sankhya\financeiro\model\enums\TipoLancamento.class
