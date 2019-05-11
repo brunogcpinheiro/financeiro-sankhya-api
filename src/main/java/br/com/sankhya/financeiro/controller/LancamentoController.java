@@ -25,8 +25,8 @@ public class LancamentoController {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	//Salvando lanlamento
-	@PostMapping("/api/lancamentos")
+	//Salvando lançamento
+	@PostMapping("/api/lancamento")
 	public ResponseEntity<?> save(@RequestBody Lancamento lancamento) {
 		Long id = lancamentoService.save(lancamento);
 		return ResponseEntity.ok().body("Lançamento criado com sucesso com id: " + id);
