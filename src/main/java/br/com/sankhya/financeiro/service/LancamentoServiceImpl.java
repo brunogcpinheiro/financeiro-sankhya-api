@@ -29,8 +29,9 @@ public class LancamentoServiceImpl implements LancamentoService{
 	}
 
 	@Override
+	@Transactional
 	public void delete(Long id) {
-		
+		lancamentoDAO.delete(id);
 	}
 
 }

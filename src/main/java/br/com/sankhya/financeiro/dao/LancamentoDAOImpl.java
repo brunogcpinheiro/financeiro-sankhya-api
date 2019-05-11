@@ -2,6 +2,7 @@ package br.com.sankhya.financeiro.dao;
 
 import java.util.List;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -28,8 +29,9 @@ public class LancamentoDAOImpl implements LancamentoDAO {
 
 	@Override
 	public void delete(Long id) {
-		
+		Session session = sessionFactory.getCurrentSession();
+		Lancamento lancamento = session.byId(Lancamento.class).load(id);
+		session.delete(lancamento);
 	}
-
 	
 }
