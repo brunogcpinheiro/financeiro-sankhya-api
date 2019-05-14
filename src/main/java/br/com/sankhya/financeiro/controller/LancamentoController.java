@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.sankhya.financeiro.model.Lancamento;
 import br.com.sankhya.financeiro.service.LancamentoService;
 
+@CrossOrigin("*")
 @RestController
 public class LancamentoController {
 
@@ -27,7 +29,7 @@ public class LancamentoController {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	//Salvando lançamento
+	//Salvando lançamento 
 	@PostMapping("/api/lancamento")
 	public ResponseEntity<?> save(@RequestBody Lancamento lancamento) {
 		Long id = lancamentoService.save(lancamento);
