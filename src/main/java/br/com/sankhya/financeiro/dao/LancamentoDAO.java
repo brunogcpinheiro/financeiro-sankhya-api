@@ -6,12 +6,12 @@ import br.com.sankhya.financeiro.model.Lancamento;
 
 public interface LancamentoDAO {
 	
-	//Salvar lançamento
+	//Salvar lancamento
 	Long save(Lancamento lancamento);
 	
-	//Listar os lançamentos
+	//Listar os lancamentos
 	List<Lancamento> list();
 	
-	//Deletar lançamento
+	//Deletar lancamento
 	void delete(Long id);
 }
