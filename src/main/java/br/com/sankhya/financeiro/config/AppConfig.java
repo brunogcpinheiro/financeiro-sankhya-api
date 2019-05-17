@@ -32,10 +32,10 @@ public class AppConfig {
 		Properties props = new Properties();
 		
 		// Configuracoes JDBC
-		props.put(DRIVER, env.getProperty("postgres.driver"));
+		//props.put(DRIVER, env.getProperty("postgres.driver"));
 		props.put(URL, env.getProperty("postgres.url"));
-		props.put(USER, env.getProperty("postgres.user"));
-		props.put(PASS, env.getProperty("postgres.password"));
+		//props.put(USER, env.getProperty("postgres.user"));
+		//props.put(PASS, env.getProperty("postgres.password"));
 		
 		// Configuracoes Hibernate
 		props.put(SHOW_SQL, env.getProperty("hibernate.show_sql"));
