@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.sankhya.financeiro.model.Lancamento;
 import br.com.sankhya.financeiro.service.LancamentoService;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class LancamentoController {
 
@@ -23,7 +23,6 @@ public class LancamentoController {
 	private LancamentoService lancamentoService;
 
 	//Listar todos os lancamentos
-	@CrossOrigin(origins = "http://financeiro-sankhya-front-brunogcpinheiro.c9users.io:8080")
 	@GetMapping("/api/lancamentos")
 	public ResponseEntity<List<Lancamento>> list() {
 		List<Lancamento> list = lancamentoService.list();
