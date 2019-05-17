@@ -22,25 +22,25 @@ public class LancamentoController {
 	@Autowired
 	private LancamentoService lancamentoService;
 
-	//Listar todos os lançamentos
+	//Listar todos os lancamentos
 	@GetMapping("/api/lancamentos")
 	public ResponseEntity<List<Lancamento>> list() {
 		List<Lancamento> list = lancamentoService.list();
 		return ResponseEntity.ok().body(list);
 	}
 	
-	//Salvando lançamento 
+	//Salvando lancamento 
 	@PostMapping("/api/lancamento")
 	public ResponseEntity<?> save(@RequestBody Lancamento lancamento) {
 		Long id = lancamentoService.save(lancamento);
-		return ResponseEntity.ok().body("Lançamento criado com sucesso com id: " + id);
+		return ResponseEntity.ok().body("Lancamento criado com sucesso com id: " + id);
 	}
 	
-	//Deletar lançamento
+	//Deletar lancamento
 	@DeleteMapping("/api/lancamento/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		lancamentoService.delete(id);
-		return ResponseEntity.ok().body("Lançamento deletado com sucesso!");
+		return ResponseEntity.ok().body("Lancamento deletado com sucesso!");
 	}
 
 }
