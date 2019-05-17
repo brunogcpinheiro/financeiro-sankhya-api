@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.sankhya.financeiro.model.Lancamento;
 import br.com.sankhya.financeiro.service.LancamentoService;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 @RestController
 public class LancamentoController {
 
