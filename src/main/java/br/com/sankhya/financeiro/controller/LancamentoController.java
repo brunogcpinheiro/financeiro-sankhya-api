@@ -23,6 +23,7 @@ public class LancamentoController {
 	private LancamentoService lancamentoService;
 
 	//Listar todos os lancamentos
+	@CrossOrigin(origins = "http://financeiro-sankhya-front-brunogcpinheiro.c9users.io:8080")
 	@GetMapping("/api/lancamentos")
 	public ResponseEntity<List<Lancamento>> list() {
 		List<Lancamento> list = lancamentoService.list();
