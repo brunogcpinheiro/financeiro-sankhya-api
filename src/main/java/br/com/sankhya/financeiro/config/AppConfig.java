@@ -31,17 +31,17 @@ public class AppConfig {
 		LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 		Properties props = new Properties();
 		
-		// Configurações JDBC
+		// Configuracoes JDBC
 		props.put(DRIVER, env.getProperty("postgres.driver"));
 		props.put(URL, env.getProperty("postgres.url"));
 		props.put(USER, env.getProperty("postgres.user"));
 		props.put(PASS, env.getProperty("postgres.password"));
 		
-		// Configurações Hibernate
+		// Configuracoes Hibernate
 		props.put(SHOW_SQL, env.getProperty("hibernate.show_sql"));
 		props.put(HBM2DDL_AUTO, env.getProperty("hibernate.hbm2ddl.auto"));
 		
-		// Configurações C3P0
+		// Configuracoes C3P0
 		props.put(C3P0_MIN_SIZE, env.getProperty("hibernate.c3p0.min_size"));
 		props.put(C3P0_MAX_SIZE, env.getProperty("hibernate.c3p0.max_size"));
 		props.put(C3P0_ACQUIRE_INCREMENT, env.getProperty("hibernate.c3p0.acquire_increment"));
