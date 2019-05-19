@@ -1,12 +1,9 @@
 package br.com.sankhya.financeiro.model;
 
-import org.springframework.format.annotation.NumberFormat;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigDecimal;
 
 import br.com.sankhya.financeiro.model.enums.TipoLancamento;
 
@@ -19,16 +16,14 @@ public class Lancamento {
 	
 	private String descricao;
 	private String vencimento;
-	
-	@NumberFormat(pattern = "#,###,###,###.##")
-	private BigDecimal valor;
+	private Double valor;
 	
 	private Integer tipo;
 	
 	public Lancamento() {
 	}
 	
-	public Lancamento(Long id, String descricao, String vencimento, BigDecimal valor, TipoLancamento tipo) {
+	public Lancamento(Long id, String descricao, String vencimento, Double valor, TipoLancamento tipo) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
@@ -55,10 +50,10 @@ public class Lancamento {
 	public void setVencimento(String vencimento) {
 		this.vencimento = vencimento;
 	}
-	public BigDecimal getValor() {
+	public Double getValor() {
 		return valor;
 	}
-	public void setValor(BigDecimal valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
 	}
 	public TipoLancamento getTipo() {
