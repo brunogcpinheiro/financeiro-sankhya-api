@@ -33,14 +33,14 @@ public class LancamentoController {
 	@PostMapping("/api/lancamento")
 	public ResponseEntity<?> save(@RequestBody Lancamento lancamento) {
 		Long id = lancamentoService.save(lancamento);
-		return ResponseEntity.ok().body("Lancamento criado com sucesso.: " + lancamento);
+		return ResponseEntity.ok();
 	}
 	
 	//Deletar lancamento
 	@DeleteMapping("/api/lancamento/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		lancamentoService.delete(id);
-		return ResponseEntity.ok().body("Lancamento deletado com sucesso. Id.: " + id);
+		return ResponseEntity.ok();
 	}
 
 }
