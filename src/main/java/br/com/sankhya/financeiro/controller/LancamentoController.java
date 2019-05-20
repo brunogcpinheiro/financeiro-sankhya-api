@@ -26,21 +26,21 @@ public class LancamentoController {
 	@GetMapping("/api/lancamentos")
 	public ResponseEntity<List<Lancamento>> list() {
 		List<Lancamento> list = lancamentoService.list();
-		return ResponseEntity.ok().body(list);
+		return ResponseEntity.ok().body(list, HttpStatus.OK);
 	}
 	
 	//Salvando lancamento 
 	@PostMapping("/api/lancamento")
 	public ResponseEntity<?> save(@RequestBody Lancamento lancamento) {
 		Long id = lancamentoService.save(lancamento);
-		return ResponseEntity.ok().body("Lancamento criado com sucesso com id: " + id);
+		return ResponseEntity.ok().body("Lancamento criado com sucesso com id: " + id, HttpStatus.OK);
 	}
 	
 	//Deletar lancamento
 	@DeleteMapping("/api/lancamento/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		lancamentoService.delete(id);
-		return ResponseEntity.ok().body("Lancamento deletado com sucesso!");
+		return ResponseEntity.ok().body("Lancamento deletado com sucesso!", HttpStatus.OK);
 	}
 
 }
